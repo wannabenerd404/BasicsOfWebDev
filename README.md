@@ -1,2 +1,1 @@
-h1 This is my repository for the Basics of Web Develpoment course.
-h2 I have task folders for organization.
+This is my repository for the Basics of Web Develpoment course.
