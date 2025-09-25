@@ -1,0 +1,49 @@
+/*
+Author: Angel Velazquez
+Date: 2025-09-25
+*/
+h1 {
+    background: linear-gradient(90deg, #32CD32, #014421);
+    color: rgb(98, 213, 83);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+p {
+    font-size: 1.1em;
+    color: #014421;
+    background: #eaffea;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+ul {
+    background: #f0fff0;
+    padding: 12px;
+    border-radius: 6px;
+    color: #014421;
+    list-style-type: square; 
+    margin-bottom: 16px;
+}
+ul li {
+    margin-bottom: 6px;
+}
+
+h2 {
+    color: #32CD32;
+    text-shadow: 1px 1px 3px #014421;
+    margin-top: 24px;
+}
+
+ol {
+    background: #f0fff0;
+    padding: 12px;
+    border-radius: 6px;
+    color: #014421;
+    list-style-type: decimal-leading-zero; 
+}
+ol li {
+    margin-bottom: 6px;
+}
