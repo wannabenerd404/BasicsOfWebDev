@@ -18,7 +18,7 @@ h1 {
 
 p {
     font-size: 1.1em;
-    color: #014421;
+    color: #2d5016;
     background: #f8d7da;
     padding: 12px;
     border-radius: 6px;
@@ -45,7 +45,7 @@ ul li::before {
 }
 
 h2 {
-    color: #32CD32;
+    color: #2d5016;
     text-shadow: 1px 1px 3px #014421;
     margin-top: 24px;
 }
@@ -54,7 +54,7 @@ ol {
     background: #f8d7da;
     padding: 12px;
     border-radius: 6px;
-    color: #014421;
+    color: #2d5016;
     list-style-type: decimal-leading-zero; 
 }
 ol li {
