@@ -7,13 +7,14 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 20px;
 }
+
 h1 {
     background: linear-gradient(90deg, #32CD32, #014421);
     color: rgb(98, 213, 83);
     padding: 10px 20px;
     border-radius: 8px;
     display: inline-block;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 p {
@@ -44,6 +45,19 @@ ul li::before {
     margin-right: 8px;
 }
 
+a {
+    color: #32CD32;
+    /* Lime green */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #d81b60;
+    /* Accent pink */
+    text-decoration: underline;
+}
+
 h2 {
     color: #2d5016;
     text-shadow: 1px 1px 3px #014421;
@@ -55,8 +69,9 @@ ol {
     padding: 12px;
     border-radius: 6px;
     color: #2d5016;
-    list-style-type: decimal-leading-zero; 
+    list-style-type: decimal-leading-zero;
 }
+
 ol li {
     margin-bottom: 6px;
 }
