@@ -2,9 +2,31 @@
 Author: Angel Velazquez
 Date: 2025-09-24
 */
-  font-family: Arial, sans-serif;
-  background-color: #fbc4c4;
+
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    margin: 40px;
 }
+
 h1 {
-  color: rgb(33, 192, 123);
+    color: #2d5016;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #014421;
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
 }
