@@ -24,12 +24,13 @@ h1 {
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 20px auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 audio {
