@@ -1,3 +1,7 @@
+<!--
+Author: Angel Velazquez
+Date: 2025-10-08
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,33 +13,35 @@
 </head>
 
 <body>
+    <header>
+        <h1>My Multimedia Showcase</h1>
+    </header>
+    <section id="image">
+        <h2>Image</h2>
+        <img src="/images/cool-set-up.jpg" alt="Fun Set Up" width="500">
+    </section>
 
-    <!--
-Author: Angel Velazquez
-Date: 2025-10-03
--->
+    <section id="audio">
+        <h2>Audio</h2>
+        <audio controls autoplay loop>
+            <source src="/images/keyboard-typing-sound-effect-335503.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
 
-    <h1>My Multimedia Showcase</h1>
-
-    <img src="media/military-3254776_640.jpg" alt="Military">
-
-    <audio controls>
-        <source src="media/sniper-rifle-129927.mp3" type="audio/mpeg">
-    </audio>
-
-    <video width="560" height="315" controls>
-        <source src="media/61418-498529700_tiny.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <p>
-        All media files (image, audio, and video) used in this showcase were sourced from
-        <a href="https://pixabay.com/" target="_blank">Pixabay</a>, a platform offering
-        free stock media. These files are provided under the
-        <a href="https://pixabay.com/service/license-summary/" target="_blank">Pixabay Content License</a>,
-        which allows free use for commercial and non-commercial purposes without attribution required.
+    <section id="video">
+        <h2>Video</h2>
+        <video width="320" height="240" controls>
+            <source src="/images/1046-142621379_tiny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    <p>This image, video, and audio was found on Pixabay, a creative commons licenced website where you can use anything
+        you find there, be they images, videos, or audio files, all for free. Here is a link to the licence page:
+        <a href="https://pixabay.com/service/license-summary/" target=_blank>
+            <br>License Summary
+        </a>
     </p>
-
 </body>
 
 </html>
