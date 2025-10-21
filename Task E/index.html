@@ -4,7 +4,27 @@
   <meta charset="UTF-8">
   <title>Weekly Timetable</title>
   <link rel="stylesheet" href="task-e/style.css">
+
+  <style>
+    /* ≤ 768px: margins 5%, show only student-info + table */
+    @media screen and (max-width: 768px) {
+      .content { margin-left: 5%; margin-right: 5%; }
+      .site-header,
+      .intro,
+      .other-content { display: none; }
+      .student-info,
+      .table-wrap { display: block; }
+    }
+
+    /* ≤ 640px: margins 1%, show only the table */
+    @media screen and (max-width: 640px) {
+      .content { margin-left: 1%; margin-right: 1%; }
+      .student-info { display: none; }
+    }
+  </style>
 </head>
+
+
 <body>
   <!--
     Author: Angel Velazquez
