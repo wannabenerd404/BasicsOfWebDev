@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script src="index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f6f8fb] text-[#1f2937] font-sans">
+    <header class="bg-[#273e73] text-white py-6 sm:py-8 px-4">
+        <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-center">Registration Page</h1>
+    </header>
+
+    <main class="container mx-auto px-4 py-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+        <div class="flex flex-col md:flex-row gap-4 mb-4">
+            
+            <section class="hidden md:block md:w-1/3 bg-white border border-[#d0d7e2] rounded-lg p-4 shadow-sm" aria-label="Student information">
+                <h2 class="text-lg font-semibold mb-2">Information:</h2>
+                <p>
+                    <span class="font-medium">Your Name</span>
+                </p>
+                <p class="mt-2">
+                    <span class="font-medium">Group number</span>
+                </p>
+            </section>
+
+            <section class="w-full md:w-2/3 bg-white border border-[#d0d7e2] rounded-lg p-4 shadow-sm" aria-label="Registration form">
+                <h2 class="text-lg font-semibold mb-4">User Registration</h2>
+                <form id="dataForm">
+                    <input type="hidden" id="timestamp" name="timestamp">
+
+                    <div class="mb-4">
+                        <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#273e73]">
+                        <div class="text-red-500 text-sm mt-1 hidden" id="fullNameError"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+                        <input type="email" id="email" name="email" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#273e73]">
+                        <div class="text-red-500 text-sm mt-1 hidden" id="emailError"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+358-xxx-xxxxxxx" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#273e73]">
+                        <div class="text-red-500 text-sm mt-1 hidden" id="phoneError"></div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="birthDate" class="block text-sm font-medium text-gray-700 mb-1">Birth Date:</label>
+                        <input type="date" id="birthDate" name="birthDate" required class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#273e73]">
+                        <div class="text-red-500 text-sm mt-1 hidden" id="birthDateError"></div>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-6">
+                        <input type="checkbox" id="terms" name="terms" required class="h-4 w-4 text-[#273e73] focus:ring-[#273e73] border-gray-300 rounded">
+                        <label for="terms" class="text-sm font-medium text-gray-700">I accept the terms and conditions</label>
+                        <div class="text-red-500 text-sm mt-1 hidden" id="termsError"></div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-[#007bff] hover:bg-[#0056b3] text-white font-medium py-2 px-4 rounded-md transition duration-150 ease-in-out">Submit</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="bg-white border border-[#d0d7e2] rounded-lg p-4 shadow-md overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200" id="registrationTable">
+                <thead class="bg-[#273e73] text-white">
+                    <tr>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Timestamp</th>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Full Name</th>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Email</th>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Phone</th>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Birth Date</th>
+                        <th scope="col" class="px-3 py-2 sm:px-6 sm:py-3 text-left text-xs sm:text-sm font-medium uppercase tracking-wider">Terms Accepted</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>
