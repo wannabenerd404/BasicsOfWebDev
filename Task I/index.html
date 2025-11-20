@@ -1,156 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkyRent - Premium Drone Rentals</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0066ff",
+                        secondary: "#00d4ff",
+                        dark: "#0a0e27",
+                        darker: "#05070f",
+                        light: "#f0f4ff",
+                        accent: "#ff3366"
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">SkyRent</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Drones</a></li>
-                <li><a href="#contact">Contact</a></li>
+<body class="bg-darker text-light font-sans">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-dark/80 backdrop-blur border-b border-primary/10 z-50">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                SkyRent
+            </div>
+
+            <!-- Desktop Nav -->
+            <ul class="hidden md:flex gap-10">
+                <li><a href="#about" class="hover:text-secondary">About</a></li>
+                <li><a href="#products" class="hover:text-secondary">Drones</a></li>
+                <li><a href="#contact" class="hover:text-secondary">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="hero-grid"></div>
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Fly Higher with SkyRent</h1>
-                    <p class="tagline">Premium drone rentals for every adventure. From aerial photography to epic explorations.</p>
-                    <div class="cta-buttons">
-                        <a href="#products" class="btn btn-primary">Explore Drones</a>
-                        <a href="#contact" class="btn btn-secondary">Get Started</a>
+
+        <!-- HERO -->
+        <section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+            
+            <!-- Background effects -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent opacity-40"></div>
+                <div class="absolute inset-0 bg-gradient-radial from-secondary/20 via-transparent to-transparent opacity-40 right-0"></div>
+            </div>
+
+            <div class="relative max-w-6xl grid md:grid-cols-2 gap-10 items-center text-center md:text-left">
+
+                <!-- Text -->
+                <div class="animate-fade-up">
+                    <h1 class="text-5xl md:text-6xl font-black bg-gradient-to-r from-white to-secondary bg-clip-text text-transparent">
+                        Fly Higher with SkyRent
+                    </h1>
+                    <p class="text-lg text-light/80 mt-6">
+                        Premium drone rentals for every adventure. From aerial photography to epic explorations.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-4 mt-10 justify-center md:justify-start">
+                        <a href="#products" class="px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:shadow-xl hover:-translate-y-1 transition">
+                            Explore Drones
+                        </a>
+                        <a href="#contact" class="px-6 py-3 rounded-xl font-semibold border border-primary text-white hover:bg-white/10 transition">
+                            Get Started
+                        </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="drone-mockup"></div>
+
+                <!-- Drone Panel -->
+                <div class="w-full h-80 rounded-2xl border border-secondary/30 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-9xl shadow-2xl animate-pulse-slow">
+                    🚁
                 </div>
+
             </div>
         </section>
 
-        <section id="about" class="about">
-            <h2 class="section-title">Why Choose SkyRent?</h2>
-            <p class="section-subtitle">Professional equipment, unbeatable prices, and expert support for your next aerial project</p>
-            
-            <div class="about-content">
-                <article class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Instant Booking</h3>
-                    <p>Reserve your drone in minutes with our streamlined booking system. Available 24/7 for same-day pickup.</p>
-                </article>
+        <!-- ABOUT -->
+        <section id="about" class="max-w-6xl mx-auto px-6 py-24">
+            <h2 class="text-4xl font-extrabold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Why Choose SkyRent?
+            </h2>
+            <p class="text-center text-light/70 max-w-lg mx-auto mt-4">
+                Professional equipment, unbeatable prices, and expert support for your next aerial project.
+            </p>
 
-                <article class="feature-card">
-                    <span class="feature-icon">🛡️</span>
-                    <h3>Fully Insured</h3>
-                    <p>All rentals include comprehensive insurance coverage. Fly with confidence knowing you're protected.</p>
-                </article>
+            <div class="grid md:grid-cols-3 gap-10 mt-16">
 
-                <article class="feature-card">
-                    <span class="feature-icon">🎓</span>
-                    <h3>Free Training</h3>
-                    <p>First-time flyer? Get complimentary training sessions and 24/7 technical support from our expert team.</p>
-                </article>
+                <div class="p-8 bg-white/5 rounded-2xl border border-secondary/20 hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Instant Booking</h3>
+                    <p class="text-light/80">Reserve your drone in minutes with our 24/7 online booking system.</p>
+                </div>
+
+                <div class="p-8 bg-white/5 rounded-2xl border border-secondary/20 hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Fully Insured</h3>
+                    <p class="text-light/80">All rentals include comprehensive insurance for peace of mind.</p>
+                </div>
+
+                <div class="p-8 bg-white/5 rounded-2xl border border-secondary/20 hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Free Training</h3>
+                    <p class="text-light/80">First-time flyers get complimentary training and tech support.</p>
+                </div>
+
             </div>
         </section>
 
-        <section id="products" class="products">
-            <h2 class="section-title">Featured Drones</h2>
-            <p class="section-subtitle">Professional-grade equipment for every skill level and project type</p>
-            
-            <div class="products-grid">
-                <article class="product-card">
-                    <div class="product-image">🚁</div>
-                    <div class="product-info">
-                        <span class="product-badge">POPULAR</span>
-                        <h3>AeroPro X5</h3>
-                        <p>Perfect for beginners and content creators. 4K camera, 30min flight time, obstacle avoidance.</p>
-                        <div class="product-price">€45 <span>/ day</span></div>
-                        <a href="#contact" class="btn btn-primary">Reserve Now</a>
+        <!-- PRODUCTS -->
+        <section id="products" class="px-6 py-24 bg-black/40">
+            <h2 class="text-4xl font-extrabold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Featured Drones
+            </h2>
+            <p class="text-center text-light/70 max-w-lg mx-auto mt-4">
+                Professional-grade equipment for every skill level and project type.
+            </p>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 mt-16">
+
+                <!-- CARD -->
+                <div class="rounded-2xl border border-secondary/10 bg-white/5 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="h-56 bg-gradient-to-br from-primary/30 to-secondary/30 flex justify-center items-center text-7xl">
+                        🚁
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image">🚁</div>
-                    <div class="product-info">
-                        <span class="product-badge">PRO CHOICE</span>
-                        <h3>SkyMaster 8K</h3>
-                        <p>Professional cinematography drone with 8K video, 45min flight, and advanced stabilization.</p>
-                        <div class="product-price">€120 <span>/ day</span></div>
-                        <a href="#contact" class="btn btn-primary">Reserve Now</a>
+                    <div class="p-6">
+                        <span class="px-3 py-1 text-sm bg-accent text-white rounded-full">POPULAR</span>
+                        <h3 class="text-2xl mt-4 font-bold">AeroPro X5</h3>
+                        <p class="text-light/70 mt-2">
+                            4K camera, 30min flight time, obstacle avoidance.
+                        </p>
+                        <div class="text-secondary text-3xl font-extrabold mt-4">€45 <span class="text-sm text-light/60 font-normal">/ day</span></div>
+                        <a href="#contact" class="block mt-6 text-center w-full px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary hover:-translate-y-1 hover:shadow-md transition">
+                            Reserve Now
+                        </a>
                     </div>
-                </article>
+                </div>
 
-                <article class="product-card">
-                    <div class="product-image">🚁</div>
-                    <div class="product-info">
-                        <span class="product-badge">RACING</span>
-                        <h3>VelocityFPV</h3>
-                        <p>High-speed FPV racing drone. Maximum agility for thrill-seekers and competitive pilots.</p>
-                        <div class="product-price">€65 <span>/ day</span></div>
-                        <a href="#contact" class="btn btn-primary">Reserve Now</a>
+                <!-- CARD -->
+                <div class="rounded-2xl border border-secondary/10 bg-white/5 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="h-56 bg-gradient-to-br from-primary/30 to-secondary/30 flex justify-center items-center text-7xl">
+                        🚁
                     </div>
-                </article>
+                    <div class="p-6">
+                        <span class="px-3 py-1 text-sm bg-accent text-white rounded-full">PRO CHOICE</span>
+                        <h3 class="text-2xl mt-4 font-bold">SkyMaster 8K</h3>
+                        <p class="text-light/70 mt-2">
+                            8K professional drone, 45min flight, advanced stabilization.
+                        </p>
+                        <div class="text-secondary text-3xl font-extrabold mt-4">€120 <span class="text-sm text-light/60 font-normal">/ day</span></div>
+                        <a href="#contact" class="block mt-6 text-center w-full px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary hover:-translate-y-1 hover:shadow-md transition">
+                            Reserve Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD -->
+                <div class="rounded-2xl border border-secondary/10 bg-white/5 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition">
+                    <div class="h-56 bg-gradient-to-br from-primary/30 to-secondary/30 flex justify-center items-center text-7xl">
+                        🚁
+                    </div>
+                    <div class="p-6">
+                        <span class="px-3 py-1 text-sm bg-accent text-white rounded-full">RACING</span>
+                        <h3 class="text-2xl mt-4 font-bold">VelocityFPV</h3>
+                        <p class="text-light/70 mt-2">
+                            High-speed FPV racing drone for adrenaline seekers.
+                        </p>
+                        <div class="text-secondary text-3xl font-extrabold mt-4">€65 <span class="text-sm text-light/60 font-normal">/ day</span></div>
+                        <a href="#contact" class="block mt-6 text-center w-full px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary hover:-translate-y-1 hover:shadow-md transition">
+                            Reserve Now
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="contact" class="cta-section">
-            <div class="cta-box">
-                <h2>Ready to Take Flight?</h2>
-                <p>Join thousands of satisfied customers and experience the freedom of aerial exploration</p>
-                <a href="#products" class="btn btn-primary">Browse Our Catalog</a>
+        <!-- CTA -->
+        <section id="contact" class="max-w-4xl mx-auto px-6 py-24 text-center">
+            <div class="p-12 rounded-3xl border border-primary bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+                <h2 class="text-4xl font-bold mb-4">Ready to Take Flight?</h2>
+                <p class="text-light/80 mb-8">Join thousands of satisfied customers and explore the skies.</p>
+                <a href="#products" class="px-6 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-xl hover:-translate-y-1 transition">
+                    Browse Our Catalog
+                </a>
             </div>
         </section>
+
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>SkyRent</h4>
-                <p>Your trusted partner for premium drone rentals. Elevating your vision since 2020.</p>
+    <!-- FOOTER -->
+    <footer class="bg-dark border-t border-secondary/20 px-6 py-16">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10">
+
+            <div>
+                <h4 class="text-secondary font-bold mb-4">SkyRent</h4>
+                <p class="text-light/70">Premium drone rentals since 2020.</p>
             </div>
 
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#products">Our Drones</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#">FAQs</a></li>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="hover:text-secondary">About Us</a></li>
+                    <li><a href="#products" class="hover:text-secondary">Our Drones</a></li>
+                    <li><a href="#contact" class="hover:text-secondary">Contact</a></li>
+                    <li><a href="#" class="hover:text-secondary">FAQs</a></li>
                 </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <ul>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Contact</h4>
+                <ul class="space-y-2 text-light/70">
                     <li>Email: hello@skyrent.com</li>
                     <li>Phone: +358 40 123 4567</li>
-                    <li>Address: Helsinki, Finland</li>
+                    <li>Helsinki, Finland</li>
                 </ul>
             </div>
 
-            <div class="footer-section">
-                <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="YouTube">📺</a>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Follow Us</h4>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#">📘</a>
+                    <a href="#">📷</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📺</a>
                 </div>
             </div>
+
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2025 SkyRent. All rights reserved. | Privacy Policy | Terms of Service</p>
+        <div class="mt-10 pt-6 border-t border-secondary/10 text-center text-light/50 text-sm">
+            &copy; 2025 SkyRent | All Rights Reserved
         </div>
     </footer>
+
 </body>
 </html>
