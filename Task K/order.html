@@ -72,7 +72,7 @@
 
         <section class="max-w-3xl mx-auto bg-dark/50 rounded-3xl border border-secondary/20 p-8 md:p-12 shadow-2xl">
             
-            <form action="thanks.html" method="POST" class="space-y-8">
+            <form action="thanks.html" method="GET" class="space-y-8">
 
                 <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
                     <legend class="text-xl font-bold text-secondary px-2">Customer Details</legend>
@@ -121,7 +121,7 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="start_date" class="block text-sm font-medium mb-2">Start Date</label>
-                            <input type="date" id="start_date" name="start_date" required min="2025-11-29"
+                            <input type="date" id="start_date" name="start_date" required
                                    class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200 cursor-pointer">
                         </div>
 
@@ -210,6 +210,22 @@
             &copy; 2025 AerialPoint | All Rights Reserved
         </div>
     </footer>
+
+	<script>
+    // 1. Get today's date in YYYY-MM-DD format
+    const today = new Date();
+    const year = today.getFullYear();
+    // Month and day need leading zeros if less than 10
+    const month = String(today.getMonth() + 1).padStart(2, '0'); 
+    const day = String(today.getDate()).padStart(2, '0');
+    
+    const todayString = `${year}-${month}-${day}`;
+
+    // 2. Find the input element and set its 'min' attribute
+    const startDateInput = document.getElementById('start_date');
+    if (startDateInput) {
+        startDateInput.setAttribute('min', todayString);
+    }</script>
 
 </body>
 </html>
