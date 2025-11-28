@@ -40,11 +40,11 @@
             <a href="index.html" class="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 AerialPoint
             </a>
-            <ul class="hidden md:flex gap-10">
-                <li><a href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
-                <li><a href="catalog.html" class="text-secondary font-semibold">Drones</a></li>
-                <li><a href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
-                <li><a href="order.html" class="hover:text-secondary transition-colors">Order</a></li>
+            <ul class="hidden md:flex gap-10" role="menubar">
+                <li role="none"><a role="menuitem" href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
+                <li role="none"><a role="menuitem" href="catalog.html" class="text-secondary font-semibold">Drones</a></li>
+                <li role="none"><a role="menuitem" href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+                <li role="none"><a role="menuitem" href="order.html" class="hover:text-secondary transition-colors">Order</a></li>
             </ul>
         </nav>
     </header>
@@ -52,14 +52,14 @@
     <main class="flex-grow pt-28 pb-16 px-6">
         
         <section class="max-w-6xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-black mb-4">Our Fleet</h1>
+            <h1 class="text-4xl md:text-5xl font-black mb-4" aria-level="1">Our Fleet</h1>
             <p class="text-light/70 text-lg max-w-2xl mx-auto">
                 Explore our wide range of professional drones available for daily or weekly rental. 
                 From racing quadcopters to cinematic 8K rigs, we have the gear you need.
             </p>
         </section>
 
-        <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
             
             <article class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
                 <div class="aspect-video w-full bg-dark relative overflow-hidden group">
