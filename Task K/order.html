@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="AerialPoint drone rental catalog featuring professional, cinematic, FPV, and agricultural drones." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catalog - AerialPoint</title>
+    <title>Order Rental - AerialPoint</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,257 +30,186 @@
             }
         }
     </script>
-    <link rel="icon" href="favicon.ico" />
+    <style>
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--color-primary); /* Primary accent on focus */
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.5); 
+        }
+        /* Style for required/invalid fields */
+        input:invalid:required:focus,
+        select:invalid:required:focus,
+        textarea:invalid:required:focus {
+            border-color: #ff3366; /* Accent color for errors */
+            box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.5);
+        }
+    </style>
 </head>
 <body class="bg-darker text-light font-sans flex flex-col min-h-screen">
 
     <header class="fixed top-0 left-0 w-full bg-dark/90 backdrop-blur border-b border-primary/10 z-50">
-        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"> aria-label="Main Navigation">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 AerialPoint
             </a>
-            <ul class="hidden md:flex gap-10" role="menubar">
-                <li role="none"><a role="menuitem" href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
-                <li role="none"><a role="menuitem" href="catalog.html" class="text-secondary font-semibold">Drones</a></li>
-                <li role="none"><a role="menuitem" href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
-                <li role="none"><a role="menuitem" href="order.html" class="hover:text-secondary transition-colors">Order</a></li>
+            <ul class="hidden md:flex gap-10">
+                <li><a href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
+                <li><a href="../Task J/catalog.html" class="hover:text-secondary transition-colors">Drones</a></li>
+                <li><a href="order.html" class="text-secondary font-semibold">Order</a></li>
+                <li><a href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="flex-grow pt-28 pb-16 px-6">
         
-        <section class="max-w-6xl mx-auto text-center mb-16 animate-fade-in">
-            <h1 class="text-4xl md:text-5xl font-black mb-4" aria-level="1">Our Fleet</h1>
+        <section class="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Request a Rental</h1>
             <p class="text-light/70 text-lg max-w-2xl mx-auto">
-                Explore our wide range of professional drones available for daily or weekly rental. 
-                From racing quadcopters to cinematic 8K rigs, we have the gear you need.
+                Fill out the form below to secure your drone. We will confirm your order and pricing within 24 hours.
             </p>
         </section>
 
-        <section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" role="list">
+        <section class="max-w-3xl mx-auto bg-dark/50 rounded-3xl border border-secondary/20 p-8 md:p-12 shadow-2xl">
             
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=800&auto=format&fit=crop" 
-                         alt="AeroPro X5 drone flying above mountains during a survey flight" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h2 class="text-xl font-bold">AeroPro X5</h2>
-                        <span class="bg-primary/20 text-primary text-xs px-2 py-1 rounded">Popular</span>
-                    </div>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        Perfect for hobbyists and semi-pros with 4K video, obstacle avoidance, and 30-minute flight time.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
-                        <div>
-                            <span class="block text-2xl font-bold text-secondary">39 €/d</span>
-                            <span class="text-xs text-light/50">199 €/wk</span>
-                        </div>
-                        <button aria-label="Rent AeroPro X5"
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
-                    </div>
-                </div>
-            </article>
+            <form action="thanks.html" method="POST" class="space-y-8">
 
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1521405924368-64c5b84bec60?q=80&w=800&auto=format&fit=crop" 
-                         alt="SkyMaster 8K professional drone equipped with a cinema lens in flight" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h2 class="text-xl font-bold">SkyMaster 8K</h2>
-                        <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded">Pro</span>
-                    </div>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        Cinema-grade 8K drone. Dual operators supported, RAW recording, and interchangeable lenses.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Customer Details</legend>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <span class="block text-2xl font-bold text-secondary">120 €/d</span>
-                            <span class="text-xs text-light/50">600 €/wk</span>
+                            <label for="full_name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" required 
+                                   class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200">
                         </div>
-                        <button aria-label="Rent Skymaster 8K" 
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
-                    </div>
-                </div>
-            </article>
 
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?q=80&w=800&auto=format&fit=crop" 
-                         alt="Velocity FPV racing drone ready for high-speed flight" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h2 class="text-xl font-bold mb-2">Velocity FPV</h2>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        High-speed racing drone. Reaches 100km/h in 2 seconds. Goggles included in rental package.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
                         <div>
-                            <span class="block text-2xl font-bold text-secondary">65 €/d</span>
-                            <span class="text-xs text-light/50">350 €/wk</span>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200">
                         </div>
-                        <button aria-label="Rent Velocity FPV"
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
                     </div>
-                </div>
-            </article>
 
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1579829366248-204fe8413f31?q=80&w=800&auto=format&fit=crop" 
-                         alt="Phantom Scout drone hovering with night vision sensors active" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h2 class="text-xl font-bold mb-2">Phantom Scout</h2>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        Long-range surveillance drone with thermal imaging and night vision capabilities.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{5,15}"
+                               placeholder="e.g., 0401234567"
+                               class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200">
+                        <p class="text-xs text-light/50 mt-1">Required for rapid communication regarding your rental.</p>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Rental Specifications</legend>
+
+                    <div>
+                        <label for="item_select" class="block text-sm font-medium mb-2">Item to Rent</label>
+                        <select id="item_select" name="item_select" required
+                                class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary appearance-none transition duration-200 cursor-pointer">
+                            <option value="" disabled selected>Select a Drone Model</option>
+                            <option value="aeropro-x5">AeroPro X5 (39 €/d)</option>
+                            <option value="skymaster-8k">SkyMaster 8K (120 €/d)</option>
+                            <option value="velocity-fpv">Velocity FPV (65 €/d)</option>
+                            <option value="phantom-scout">Phantom Scout (89 €/d)</option>
+                            <option value="agridrone-t30">AgriDrone T30 (150 €/d)</option>
+                            <option value="miniflyer-se">MiniFlyer SE (25 €/d)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <span class="block text-2xl font-bold text-secondary">89 €/d</span>
-                            <span class="text-xs text-light/50">450 €/wk</span>
+                            <label for="start_date" class="block text-sm font-medium mb-2">Start Date</label>
+                            <input type="date" id="start_date" name="start_date" required min="2025-11-29"
+                                   class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200 cursor-pointer">
                         </div>
-                        <button aria-label="Rent Phantom Scout" 
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
-                    </div>
-                </div>
-            </article>
 
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1713952160156-bb59cac789a9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWdyaWN1bHR1cmUlMjBkcm9uZXxlbnwwfHwwfHx8MA%3D%3D" 
-                         alt="AgriDrone T30 performing automated crop spraying over farmland" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <h2 class="text-xl font-bold mb-2">AgriDrone T30</h2>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        Heavy-lift drone designed for agricultural mapping and automated crop spraying.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
                         <div>
-                            <span class="block text-2xl font-bold text-secondary">150 €/d</span>
-                            <span class="text-xs text-light/50">800 €/wk</span>
+                            <label for="quantity" class="block text-sm font-medium mb-2">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" required min="1" max="5" value="1"
+                                   class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200">
                         </div>
-                        <button aria-label="Rent AgriDrone T30"
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
                     </div>
-                </div>
-            </article>
+                </fieldset>
 
-            <article role="listitem" class="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,102,255,0.15)] transition-all duration-300 flex flex-col">
-                <div class="aspect-video w-full bg-dark relative overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1533120597534-ca28e7a4cd7e?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                         alt="MiniFlyer SE small foldable drone designed for beginners" 
-                         class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
-                         loading="lazy">
-                </div>
-                <div class="p-6 flex flex-col flex-grow">
-                    <div class="flex justify-between items-start mb-2">
-                        <h2 class="text-xl font-bold">MiniFlyer SE</h2>
-                        <span class="bg-secondary/20 text-secondary text-xs px-2 py-1 rounded">Beginner</span>
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Additional Information</legend>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Special Requests / Message</label>
+                        <textarea id="message" name="message" rows="4" 
+                                  class="w-full p-3 rounded-lg bg-darker border border-darker/50 text-light focus:border-primary transition duration-200"></textarea>
                     </div>
-                    <p class="text-light/60 text-sm mb-6 line-clamp-2">
-                        Ultra-lightweight, no license required. Great for travel and beginners.
-                    </p>
-                    <div class="mt-auto flex justify-between items-end border-t border-white/10 pt-4">
-                        <div>
-                            <span class="block text-2xl font-bold text-secondary">25 €/d</span>
-                            <span class="text-xs text-light/50">120 €/wk</span>
+                    
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required
+                                   class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary bg-dark border-white/30 cursor-pointer">
+                            <label for="terms" class="ml-3 text-sm font-medium">
+                                I accept the <a href="#" class="text-primary hover:text-secondary underline">rental terms and privacy policy</a>. *
+                            </label>
                         </div>
-                        <button aria-label="Rent MiniFlyer SE"
-                            class="bg-white/10 hover:bg-primary text-white px-4 py-2 rounded-lg text-sm transition">Rent</button>
-                    </div>
-                </div>
-            </article>
 
+                        <div class="flex items-start">
+                            <input type="checkbox" id="newsletter" name="newsletter"
+                                   class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary bg-dark border-white/30 cursor-pointer">
+                            <label for="newsletter" class="ml-3 text-sm font-medium">
+                                Subscribe to the AerialPoint newsletter for flight tips and offers.
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="pt-4 text-center">
+                    <button type="submit" 
+                            class="px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:shadow-xl hover:-translate-y-1 transition text-lg">
+                        Submit Rental Request
+                    </button>
+                </div>
+
+            </form>
         </section>
-
-<section class="max-w-4xl mx-auto mt-24 text-center">
-
-    <h2 class="text-3xl font-bold mb-2">See Them in Action</h2>
-    <p class="text-light/60 mt-2 mb-10">Watch our safety guide and quick start tutorial.</p>
-
-    <div class="relative rounded-2xl overflow-hidden border border-secondary/20 shadow-2xl bg-black">
-        <iframe class="w-full aspect-video" 
-            src="https://www.youtube.com/embed/kcfs1-ryKWE" 
-            title="Drone video from YouTube" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-</section>
-
 
     </main>
 
-    <footer class="bg-dark border-t border-primary/10 mt-14 py-12" role="contentinfo">
-
-    <nav aria-label="Footer Navigation" class="max-w-6xl mx-auto px-6">
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-
+    <footer class="bg-dark border-t border-secondary/20 px-6 py-16 mt-auto">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10">
             <div>
-                <h3 class="text-xl font-bold mb-3">AerialPoint</h3>
-                <p class="text-light/70">
-                    High-end drone rentals for every purpose — filmmaking, racing, engineering, agriculture, and more.
-                </p>
+                <h4 class="text-secondary font-bold mb-4">AerialPoint</h4>
+                <p class="text-light/70">Premium drone rentals since 2020.</p>
             </div>
-
             <div>
-                <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
-
+                <h4 class="text-secondary font-bold mb-4">Quick Links</h4>
                 <ul class="space-y-2">
-                    <li><a href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
-                    <li><a href="catalog.html" class="hover:text-secondary transition-colors">Drones</a></li>
-                    <li><a href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+                    <li><a href="../Task J/index.html" class="hover:text-secondary">Home</a></li>
+                    <li><a href="../Task J/catalog.html" class="hover:text-secondary">Catalog</a></li>
+                    <li><a href="order.html" class="hover:text-secondary">Order</a></li>
+                    <li><a href="../Task J/index.html#contact" class="hover:text-secondary">Contact</a></li>
                 </ul>
             </div>
-
             <div>
-                <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
-
-                <nav aria-label="Social Media Links"> 
-                    <ul class="flex gap-4">
-
-                        <li>
-                            <a href="#" aria-label="Visit our Instagram page" class="hover:text-secondary transition-colors">
-                                <svg class="w-6 h-6" fill="currentColor"><path d="…"/></svg>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#" aria-label="Visit our YouTube channel" class="hover:text-secondary transition-colors">
-                                <svg class="w-6 h-6" fill="currentColor"><path d="…"/></svg>
-                            </a>
-                        </li>
-
-                    </ul>
-                </nav>
+                <h4 class="text-secondary font-bold mb-4">Contact</h4>
+                <ul class="space-y-2 text-light/70">
+                    <li>Email: hello@aerialpoint.com</li>
+                    <li>Phone: +358 40 123 4567</li>
+                    <li>Helsinki, Finland</li>
+                </ul>
             </div>
-
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Follow Us</h4>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-white transition">📘</a>
+                    <a href="#" class="hover:text-white transition">📷</a>
+                    <a href="#" class="hover:text-white transition">🐦</a>
+                </div>
+            </div>
         </div>
-
-        <p class="text-center text-light/50 text-sm mt-10">
-            © 2025 AerialPoint. All rights reserved.
-        </p>
-
-    </nav>
-</footer>
+        <div class="mt-10 pt-6 border-t border-secondary/10 text-center text-light/50 text-sm">
+            &copy; 2025 AerialPoint | All Rights Reserved
+        </div>
+    </footer>
 
 </body>
 </html>
