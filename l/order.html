@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Rental - AerialPoint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0066ff",
+                        secondary: "#00d4ff",
+                        dark: "#0a0e27",
+                        darker: "#05070f",
+                        light: "#f0f4ff",
+                        accent: "#ff3366"
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--color-primary); /* Primary accent on focus */
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.5); 
+        }
+        /* Style for required/invalid fields */
+        input:invalid:required:focus,
+        select:invalid:required:focus,
+        textarea:invalid:required:focus {
+            border-color: #ff3366; /* Accent color for errors */
+            box-shadow: 0 0 0 3px rgba(255, 51, 102, 0.5);
+        }
+
+		input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1); /* Tries to turn the black icon white */
+        cursor: pointer;
+    	}
+    </style>
+</head>
+<body class="bg-darker text-light font-sans flex flex-col min-h-screen">
+
+    <header class="fixed top-0 left-0 w-full bg-dark/90 backdrop-blur border-b border-primary/10 z-50">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../Task I/index.html" class="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                AerialPoint
+            </a>
+            <ul class="hidden md:flex gap-10">
+                <li><a href="../Task I/index.html#about" class="hover:text-secondary transition-colors">About</a></li>
+                <li><a href="../Task J/catalog.html" class="hover:text-secondary transition-colors">Drones</a></li>
+                <li><a href="order.html" class="text-secondary font-semibold">Order</a></li>
+                <li><a href="../Task I/index.html#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow pt-28 pb-16 px-6">
+        
+        <section class="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Request a Rental</h1>
+            <p class="text-light/70 text-lg max-w-2xl mx-auto">
+                Fill out the form below to secure your drone. We will confirm your order and pricing within 24 hours.
+            </p>
+        </section>
+
+        <section class="max-w-3xl mx-auto bg-dark/50 rounded-3xl border border-secondary/20 p-8 md:p-12 shadow-2xl">
+            
+            <form action="thanks.html" method="GET" class="space-y-8">
+
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Customer Details</legend>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="full_name" class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" id="full_name" name="full_name" required 
+                                   class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="phone" class="block text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required pattern="[0-9]{5,15}"
+                               placeholder="e.g., 0401234567"
+                               class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200">
+                        <p class="text-xs text-light/50 mt-1">Required for rapid communication regarding your rental.</p>
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Rental Specifications</legend>
+
+                    <div>
+                        <label for="item_select" class="block text-sm font-medium mb-2">Item to Rent</label>
+                        <select id="item_select" name="item_select" required
+                                class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary appearance-none transition duration-200 cursor-pointer">
+                            <option value="" disabled selected>Select a Drone Model</option>
+                            <option value="aeropro-x5">AeroPro X5 (39 €/d)</option>
+                            <option value="skymaster-8k">SkyMaster 8K (120 €/d)</option>
+                            <option value="velocity-fpv">Velocity FPV (65 €/d)</option>
+                            <option value="phantom-scout">Phantom Scout (89 €/d)</option>
+                            <option value="agridrone-t30">AgriDrone T30 (150 €/d)</option>
+                            <option value="miniflyer-se">MiniFlyer SE (25 €/d)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="start_date" class="block text-sm font-medium mb-2">Start Date</label>
+                            <input type="date" id="start_date" name="start_date" required
+                                   class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200 cursor-pointer">
+                        </div>
+
+                        <div>
+                            <label for="quantity" class="block text-sm font-medium mb-2">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" required min="1" max="5" value="1"
+                                   class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset class="p-6 border border-white/10 rounded-xl space-y-4">
+                    <legend class="text-xl font-bold text-secondary px-2">Additional Information</legend>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium mb-2">Special Requests / Message</label>
+                        <textarea id="message" name="message" rows="4" 
+                                  class="w-full p-3 rounded-lg bg-dark border border-darker/50 text-light focus:border-primary transition duration-200"></textarea>
+                    </div>
+                    
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start">
+                            <input type="checkbox" id="terms" name="terms" required
+                                   class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary bg-dark border-white/30 cursor-pointer">
+                            <label for="terms" class="ml-3 text-sm font-medium">
+                                I accept the <a href="#" class="text-primary hover:text-secondary underline">rental terms and privacy policy</a>. *
+                            </label>
+                        </div>
+
+                        <div class="flex items-start">
+                            <input type="checkbox" id="newsletter" name="newsletter"
+                                   class="h-4 w-4 mt-1 rounded text-primary focus:ring-primary bg-dark border-white/30 cursor-pointer">
+                            <label for="newsletter" class="ml-3 text-sm font-medium">
+                                Subscribe to the AerialPoint newsletter for flight tips and offers.
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="pt-4 text-center">
+                    <button type="submit" 
+                            class="px-8 py-4 rounded-xl font-bold text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:shadow-xl hover:-translate-y-1 transition text-lg">
+                        Submit Rental Request
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark border-t border-secondary/20 px-6 py-16 mt-auto">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10">
+            <div>
+                <h4 class="text-secondary font-bold mb-4">AerialPoint</h4>
+                <p class="text-light/70">Premium drone rentals since 2020.</p>
+            </div>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="../Task J/index.html" class="hover:text-secondary">Home</a></li>
+                    <li><a href="../Task J/catalog.html" class="hover:text-secondary">Catalog</a></li>
+                    <li><a href="order.html" class="hover:text-secondary">Order</a></li>
+                    <li><a href="../Task J/index.html#contact" class="hover:text-secondary">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Contact</h4>
+                <ul class="space-y-2 text-light/70">
+                    <li>Email: hello@aerialpoint.com</li>
+                    <li>Phone: +358 40 123 4567</li>
+                    <li>Helsinki, Finland</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-secondary font-bold mb-4">Follow Us</h4>
+                <div class="flex gap-4 text-2xl">
+                    <a href="#" class="hover:text-white transition">📘</a>
+                    <a href="#" class="hover:text-white transition">📷</a>
+                    <a href="#" class="hover:text-white transition">🐦</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 pt-6 border-t border-secondary/10 text-center text-light/50 text-sm">
+            &copy; 2025 AerialPoint | All Rights Reserved
+        </div>
+    </footer>
+
+	<script>
+    // 1. Get today's date in YYYY-MM-DD format
+    const today = new Date();
+    const year = today.getFullYear();
+    // Month and day need leading zeros if less than 10
+    const month = String(today.getMonth() + 1).padStart(2, '0'); 
+    const day = String(today.getDate()).padStart(2, '0');
+    
+    const todayString = `${year}-${month}-${day}`;
+
+    // 2. Find the input element and set its 'min' attribute
+    const startDateInput = document.getElementById('start_date');
+    if (startDateInput) {
+        startDateInput.setAttribute('min', todayString);
+    }</script>
+
+</body>
+</html>
