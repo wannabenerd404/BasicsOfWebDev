@@ -1,7 +1,7 @@
 CHANGELOG: Fix validation errors
-# 🎯 Task L: AerialPoint - Final Unified Website
+# Task L: AerialPoint - Final Unified Website
 
-## 📝 Change Log & Improvements
+## Change Log & Improvements
 
 ### 1. Project Unification & Consistency
 * All three pages (`index.html`, `catalog.html`, `order.html`) were moved into the `/l/` folder.
