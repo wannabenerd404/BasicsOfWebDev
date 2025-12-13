@@ -1,4 +1,3 @@
-CHANGELOG: Fix validation errors
 # Task L: AerialPoint - Final Unified Website
 
 ## Change Log & Improvements
